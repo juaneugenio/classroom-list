@@ -1,0 +1,90 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CRUD Usuarios</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" />
+		<link rel="stylesheet" href="/css/styles.css" />
+	</head>
+	<body>
+		<div class="container mt-5">
+			<h1 class="title has-text-centered">Users List</h1>
+			<!-- Botón para abrir el modal -->
+			<button class="button is-primary" id="addUserButton">Add User</button>
+
+			<!-- Modal -->
+			<div class="modal" id="userModal">
+				<div class="modal-background"></div>
+				<div class="modal-card">
+					<header class="modal-card-head">
+						<p class="modal-card-title">Add User</p>
+						<button class="delete" aria-label="close" id="closeModal"></button>
+					</header>
+					<section class="modal-card-body">
+						<!-- Formulario dentro del modal -->
+						<form id="userForm">
+							<div class="field">
+								<label class="label" for="name">Name</label>
+								<div class="control">
+									<input type="text" class="input" id="nombre" placeholder="Name" required />
+								</div>
+							</div>
+							<div class="field">
+								<label class="label" for="surname">Surname</label>
+								<div class="control">
+									<input type="text" class="input" id="apellido" placeholder="Surname" required />
+								</div>
+							</div>
+							<div class="field">
+								<label class="label" for="city">City</label>
+								<div class="control">
+									<input type="text" class="input" id="ciudad" placeholder="City" required />
+								</div>
+							</div>
+							<div class="field">
+								<label class="label" for="email">Email</label>
+								<div class="control">
+									<input type="email" class="input" id="email" placeholder="Email" required />
+								</div>
+							</div>
+							<!-- Botón para enviar el formulario -->
+							<button type="submit" class="button is-primary">Submit</button>
+						</form>
+					</section>
+				</div>
+			</div>
+
+			<!-- Tabla de usuarios -->
+			<table id="userTable" class="table is-striped is-fullwidth mt-3">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Surname</th>
+						<th>City</th>
+						<th>Email</th>
+						<th>Acciones</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
+		</div>
+
+		<!-- Incluye jQuery (opcional) y tu archivo JS -->
+		<script src="/js/app.js"></script>
+
+		<!-- Script para manejar el modal -->
+		<script>
+			document.getElementById("addUserButton").addEventListener("click", function () {
+				document.getElementById("userModal").classList.add("is-active");
+			});
+
+			document.getElementById("closeModal").addEventListener("click", function () {
+				document.getElementById("userModal").classList.remove("is-active");
+			});
+		</script>
+	</body>
+</html>
