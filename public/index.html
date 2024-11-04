@@ -1,0 +1,66 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gestión de Usuarios</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+	</head>
+	<body>
+		<button id="addUserBtn" class="button is-primary">Add User</button>
+
+		<div class="modal" id="userFormModal">
+			<div class="modal-background"></div>
+			<div class="modal-content">
+				<!-- Any other Bulma elements you want -->
+				 <form class="box" id="userForm">
+
+					 <div class="field">
+						 <label class="label">Name</label>
+						 <div class="control">
+							 <input class="input" id="name" type="text" placeholder="e.g. John" required/>
+							</div>
+						</div>
+						<div class="field">
+						 <label class="label">Surname</label>
+						 <div class="control">
+							 <input class="input" id="surname" type="text" placeholder="e.g. Doe" required/>
+							</div>
+						</div>
+						<div class="field">
+							<label class="label">Email</label>
+							<div class="control">
+								<input class="input" id="email" type="email" placeholder="e.g. johndoe@mail.com" required/>
+							</div>
+						</div>
+						<button class="button is-success">Submit</button>
+					</div>
+					<button class="modal-close is-large" aria-label="close"></button>
+				</div>
+				<!-- lista de usuarios	 -->
+				 <div>
+
+					 <ul id="userList" class="box is-list ">
+
+					</ul>
+				</div>
+			</form>
+
+		<script src="script.js"></script>
+
+		<!-- Script para manejar la apertura y cierre del modal -->
+		<script>
+			document.getElementById("addUserBtn").addEventListener("click", function () {
+				document.getElementById("userFormModal").classList.add("is-active");
+			});
+
+			document.querySelectorAll(".modal-background, .modal-close, #cancelButton").forEach(function (element) {
+				element.addEventListener("click", function () {
+					document.getElementById("userFormModal").classList.remove("is-active");
+				});
+			});
+		</script>
+	</body>
+</html>
