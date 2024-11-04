@@ -8,45 +8,47 @@
 		<title>Gestión de Usuarios</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
 	</head>
-	<body>
-		<button id="addUserBtn" class="button is-primary">Add User</button>
+	<body class="container is-centered">
+		<div class="block">
+			<h1 class="title">Users List</h1>
+			<button id="addUserBtn" class="button is-primary">Add User</button>
+		</div>
 
+		<!-- Modal -->
 		<div class="modal" id="userFormModal">
 			<div class="modal-background"></div>
 			<div class="modal-content">
 				<!-- Any other Bulma elements you want -->
-				 <form class="box" id="userForm">
-
-					 <div class="field">
-						 <label class="label">Name</label>
-						 <div class="control">
-							 <input class="input" id="name" type="text" placeholder="e.g. John" required/>
-							</div>
+				<form id="userForm" class="box">
+					<div class="field">
+						<label class="label">Name</label>
+						<div class="control">
+							<input class="input" id="name" type="text" placeholder="e.g. John" required />
 						</div>
-						<div class="field">
-						 <label class="label">Surname</label>
-						 <div class="control">
-							 <input class="input" id="surname" type="text" placeholder="e.g. Doe" required/>
-							</div>
-						</div>
-						<div class="field">
-							<label class="label">Email</label>
-							<div class="control">
-								<input class="input" id="email" type="email" placeholder="e.g. johndoe@mail.com" required/>
-							</div>
-						</div>
-						<button class="button is-success">Submit</button>
 					</div>
+					<div class="field">
+						<label class="label">Surname</label>
+						<div class="control">
+							<input class="input" id="surname" type="text" placeholder="e.g. Doe" required />
+						</div>
+					</div>
+					<div class="field">
+						<label class="label">Email</label>
+						<div class="control">
+							<input class="input" id="email" type="email" placeholder="e.g. johndoe@mail.com" required />
+						</div>
+					</div>
+					<button class="button is-success">Submit</button>
+
 					<button class="modal-close is-large" aria-label="close"></button>
-				</div>
-				<!-- lista de usuarios	 -->
-				 <div>
+				</form>
+			</div>
+		</div>
 
-					 <ul id="userList" class="box is-list ">
-
-					</ul>
-				</div>
-			</form>
+		<!-- lista de usuarios	 -->
+		<div class="columns is-narrow">
+			<ul id="userList" class="column"></ul>
+		</div>
 
 		<script src="script.js"></script>
 

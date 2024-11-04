@@ -39,7 +39,7 @@ function loadUsers() {
 			users.forEach((user) => {
 				// console.log("👉 Line-39 ▶︎▶︎", user);
 				const li = document.createElement("li");
-				li.className = "box";
+				li.className = "block";
 				li.innerHTML = `${user.name} ${user.surname} - <a mailto="${user.email}">${user.email}</a>
 				`;
 				li.appendChild(createDeleteButton(user.id));
