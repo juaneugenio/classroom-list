@@ -49,3 +49,13 @@ Contributions are welcome! Please open an issue or submit a pull request to impr
 
 This project is licensed under the MIT License.
 I hope this format is helpful for documenting your project! You can adjust any details as necessary.
+
+## Screenshots
+
+1. List of Users
+
+![List of users](./images/list.jpeg)
+
+2. Modal form to create a user
+
+![Form to create a user](./images/modal.jpeg)

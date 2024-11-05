@@ -46,3 +46,13 @@ Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull re
 
 Este proyecto está bajo la Licencia MIT.
 Espero que este formato te sea útil para documentar tu proyecto. Puedes ajustar los detalles según sea necesario.
+
+## Capturas
+
+1. Lista de ususarios
+
+![List of users](./images/list.jpeg)
+
+2. Formulario para crear usuarios.
+
+![Form to create a user](./images/modal.jpeg)
