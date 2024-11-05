@@ -4,12 +4,18 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const fs = require("fs");
+const path = require("path");
 const app = express();
 const PORT = 3000;
 
 // Middlewares
 app.use(bodyParser.json());
 app.use(express.static("public"));
+
+// Ruta para servir el archivo HTML desde la raíz
+app.get("/", (req, res) => {
+	res.sendFile(path.join(__dirname, "index.html"));
+});
 
 // Ruta para obtener todos los usuarios
 app.get("/users", (req, res) => {
