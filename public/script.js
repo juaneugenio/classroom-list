@@ -36,11 +36,23 @@ function loadUsers() {
 		.then((users) => {
 			const userList = document.getElementById("userList");
 			userList.innerHTML = "";
-			users.forEach((user) => {
+
+			// select the elemento to show the amount of users created
+			let userCount = document.getElementById("userCount");
+			if (!userCount) {
+				// userCount = document.createElement("span");
+				userCount.id = "userCount";
+				userCount.innerHTML = users.length;
+				document.body.appendChild(userCount);
+			} else {
+				userCount.innerHTML = users.length;
+			}
+
+			users.forEach((user, index) => {
 				// console.log("👉 Line-39 ▶︎▶︎", user);
 				const li = document.createElement("li");
-				li.className = "box";
-				li.innerHTML = `${user.name} ${user.surname} - <a mailto="${user.email}">${user.email}</a>
+				li.className = "block";
+				li.innerHTML = `${index + 1}. ${user.name} ${user.surname} - <a mailto="${user.email}">${user.email}</a>
 				`;
 				li.appendChild(createDeleteButton(user.id));
 				userList.appendChild(li);
