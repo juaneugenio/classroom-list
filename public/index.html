@@ -8,10 +8,13 @@
 		<title>Gestión de Usuarios</title>
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
 	</head>
-	<body class="container is-centered">
-		<div class="block">
+	<body class="container is-max-tablet">
+		<div class="container has-text-centered mt-6">
 			<h1 class="title">Users List</h1>
 			<button id="addUserBtn" class="button is-primary">Add User</button>
+			<h3 class="subtitle mt-6">
+				Total users: <span class="has-text-danger has-text-weight-bold" id="userCount"></span>
+			</h3>
 		</div>
 
 		<!-- Modal -->
@@ -46,8 +49,8 @@
 		</div>
 
 		<!-- lista de usuarios	 -->
-		<div class="columns is-narrow">
-			<ul id="userList" class="column"></ul>
+		<div class="section">
+			<ul id="userList"></ul>
 		</div>
 
 		<script src="script.js"></script>
